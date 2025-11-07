@@ -156,7 +156,7 @@ export default function Hero() {
       {/* Background */}
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
+        style={{ backgroundImage: "url('./images/hero-bg.jpg')" }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
 
@@ -202,7 +202,7 @@ export default function Hero() {
         >
           <div className="absolute inset-0 rounded-full blur-3xl bg-[#00ffd5]/30 animate-pulse" />
           <img
-            src="/images/amir-profile.png"
+            src="./images/amir-profile.png"
             alt="Amir Rahemeto"
             className="relative w-64 sm:w-72 md:w-[520px] lg:w-[560px] rounded-full object-cover shadow-[0_0_40px_#00ffd540] transition-all duration-300 hover:scale-105"
           />
