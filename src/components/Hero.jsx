@@ -3,50 +3,39 @@ import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import { motion, AnimatePresence } from "framer-motion";
 
-// ⚡ Balanced fast typing hook
-function useTypingFast(phrases) {
+// ✨ Natural Dynamic Typing Hook
+function useDynamicTyping(phrases, pause = 1500) {
   const [display, setDisplay] = useState("");
-  const phraseIndexRef = useRef(0);
-  const charIndexRef = useRef(0);
-  const deletingRef = useRef(false);
+  const [index, setIndex] = useState(0);
+  const [deleting, setDeleting] = useState(false);
 
   useEffect(() => {
-    let animationFrame;
-    let pauseTimeout;
+    const current = phrases[index];
+    let timer;
 
-    const tick = () => {
-      const current = phrases[phraseIndexRef.current];
+    const randomTypingSpeed = () => Math.floor(Math.random() * 40) + 80; // 80–120ms
 
-      if (!deletingRef.current) {
-        charIndexRef.current += 1; // type 1 char per frame (fast but readable)
-        if (charIndexRef.current >= current.length) {
-          charIndexRef.current = current.length;
-          pauseTimeout = setTimeout(() => {
-            deletingRef.current = true;
-            animationFrame = requestAnimationFrame(tick);
-          }, 800); // small pause before deleting
-          return;
-        }
-      } else {
-        charIndexRef.current -= 2; // delete faster
-        if (charIndexRef.current <= 0) {
-          charIndexRef.current = 0;
-          deletingRef.current = false;
-          phraseIndexRef.current =
-            (phraseIndexRef.current + 1) % phrases.length;
-        }
-      }
+    if (!deleting && display.length < current.length) {
+      // Typing characters
+      timer = setTimeout(() => {
+        setDisplay(current.slice(0, display.length + 1));
+      }, randomTypingSpeed());
+    } else if (deleting && display.length > 0) {
+      // Deleting characters
+      timer = setTimeout(() => {
+        setDisplay(current.slice(0, display.length - 1));
+      }, randomTypingSpeed() * 0.6); // a bit faster when deleting
+    } else if (!deleting && display.length === current.length) {
+      // Pause at end
+      timer = setTimeout(() => setDeleting(true), pause);
+    } else if (deleting && display.length === 0) {
+      // Move to next phrase
+      setDeleting(false);
+      setIndex((prev) => (prev + 1) % phrases.length);
+    }
 
-      setDisplay(current.slice(0, charIndexRef.current));
-      animationFrame = requestAnimationFrame(tick);
-    };
-
-    animationFrame = requestAnimationFrame(tick);
-    return () => {
-      cancelAnimationFrame(animationFrame);
-      clearTimeout(pauseTimeout);
-    };
-  }, [phrases]);
+    return () => clearTimeout(timer);
+  }, [display, deleting, index, phrases, pause]);
 
   return display;
 }
@@ -57,7 +46,7 @@ export default function Hero() {
     "Do More.",
     "Full Stack Developer, Futuristic Creator.",
   ];
-  const typed = useTypingFast(phrases);
+  const typed = useDynamicTyping(phrases);
   const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
