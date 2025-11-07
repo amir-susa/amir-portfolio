@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { loadSlim } from "@tsparticles/slim";
 import { motion, AnimatePresence } from "framer-motion";
@@ -16,20 +16,16 @@ function useDynamicTyping(phrases, pause = 1500) {
     const randomTypingSpeed = () => Math.floor(Math.random() * 40) + 80; // 80–120ms
 
     if (!deleting && display.length < current.length) {
-      // Typing characters
       timer = setTimeout(() => {
         setDisplay(current.slice(0, display.length + 1));
       }, randomTypingSpeed());
     } else if (deleting && display.length > 0) {
-      // Deleting characters
       timer = setTimeout(() => {
         setDisplay(current.slice(0, display.length - 1));
-      }, randomTypingSpeed() * 0.6); // a bit faster when deleting
+      }, randomTypingSpeed() * 0.6);
     } else if (!deleting && display.length === current.length) {
-      // Pause at end
       timer = setTimeout(() => setDeleting(true), pause);
     } else if (deleting && display.length === 0) {
-      // Move to next phrase
       setDeleting(false);
       setIndex((prev) => (prev + 1) % phrases.length);
     }
@@ -156,7 +152,9 @@ export default function Hero() {
       {/* Background */}
       <div
         className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: "url('./images/hero-bg.jpg')" }}
+        style={{
+          backgroundImage: `url(${import.meta.env.BASE_URL}images/hero-bg.jpg)`,
+        }}
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
 
@@ -202,7 +200,7 @@ export default function Hero() {
         >
           <div className="absolute inset-0 rounded-full blur-3xl bg-[#00ffd5]/30 animate-pulse" />
           <img
-            src="./images/amir-profile.png"
+            src={`${import.meta.env.BASE_URL}images/amir-profile.png`}
             alt="Amir Rahemeto"
             className="relative w-64 sm:w-72 md:w-[520px] lg:w-[560px] rounded-full object-cover shadow-[0_0_40px_#00ffd540] transition-all duration-300 hover:scale-105"
           />
