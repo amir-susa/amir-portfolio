@@ -5,13 +5,13 @@ import { FaPaintBrush, FaChartLine, FaGavel } from "react-icons/fa";
 export default function Projects() {
   const projects = [
     {
-      title: "Procedural Art Generator (Front-End)",
-      desc: "A dynamic front-end app generating unique digital art using HTML Canvas and JavaScript. Implements sliders and color pickers for real-time manipulation.",
-      icon: <FaPaintBrush className="text-cyan-400 text-3xl inline-block mb-3" />,
-      img: `${import.meta.env.BASE_URL}images/art.PNG`,
-      github: "https://github.com/amir-susa/procedural-art-generator",
-      live: "https://amir-susa.github.io/procedural-art-generator/",
-    },
+      title: "Full-Stack Task Manager",
+      description: "A MERN stack application with JWT authentication, real-time updates, and a Kanban board UI.",
+      techStack: ["React", "Node.js", "MongoDB", "Tailwind CSS", "Render", "Vercel"],
+      liveLink: "https://task-manager-kappa-five-49.vercel.app/", // The URL from your recent deploy
+      githubLink: "https://github.com/amir-susa/task-manager",
+      image: "/assets/task-manager-preview.png" 
+},
     {
       title: "Personal Finance Dashboard (API-Driven)",
       desc: "An API-driven dashboard displaying real-time financial data using JavaScript. Handles external API errors gracefully for a seamless UX.",
