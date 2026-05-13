@@ -1,17 +1,25 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaPaintBrush, FaChartLine, FaGavel } from "react-icons/fa";
+import { FaPaintBrush, FaChartLine, FaGavel, FaClipboardCheck } from "react-icons/fa";
 
 export default function Projects() {
   const projects = [
     {
-      title: "Full-Stack Task Manager",
-      description: "A MERN stack application with JWT authentication, real-time updates, and a Kanban board UI.",
+      title: "",
+      description: "A full-stack task management app built with React, Node.js, and MongoDB. Features user authentication, CRUD operations, and responsive design.",
       techStack: ["React", "Node.js", "MongoDB", "Tailwind CSS", "Render", "Vercel"],
       liveLink: "https://task-manager-kappa-five-49.vercel.app/", // The URL from your recent deploy
       githubLink: "https://github.com/amir-susa/task-manager",
-      image: "/assets/task-manager-preview.png" 
+      image: "/assets/" 
 },
+    {
+      title: "Full-Stack Task Manager",
+      desc: "A full-stack task management app built with React, Node.js, and MongoDB. Features user authentication, CRUD operations, and responsive design.",
+      icon: <FaClipboardCheck className="text-cyan-400 text-3xl inline-block mb-3" />,
+      img: `${import.meta.env.BASE_URL}images/task-manager-preview.png`,
+      github: "https://github.com/amir-susa/task-manager",
+      live: "https://task-manager-kappa-five-49.vercel.app/",
+    },
     {
       title: "Personal Finance Dashboard (API-Driven)",
       desc: "An API-driven dashboard displaying real-time financial data using JavaScript. Handles external API errors gracefully for a seamless UX.",
