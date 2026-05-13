@@ -5,14 +5,6 @@ import { FaPaintBrush, FaChartLine, FaGavel, FaClipboardCheck } from "react-icon
 export default function Projects() {
   const projects = [
     {
-      title: "",
-      description: "A full-stack task management app built with React, Node.js, and MongoDB. Features user authentication, CRUD operations, and responsive design.",
-      techStack: ["React", "Node.js", "MongoDB", "Tailwind CSS", "Render", "Vercel"],
-      liveLink: "https://task-manager-kappa-five-49.vercel.app/", // The URL from your recent deploy
-      githubLink: "https://github.com/amir-susa/task-manager",
-      image: "/assets/" 
-},
-    {
       title: "Full-Stack Task Manager",
       desc: "A full-stack task management app built with React, Node.js, and MongoDB. Features user authentication, CRUD operations, and responsive design.",
       icon: <FaClipboardCheck className="text-cyan-400 text-3xl inline-block mb-3" />,
