@@ -22,15 +22,15 @@ The website features a modern dark-themed interface, responsive layouts, animate
 
 ## Tech Stack
 
-| Technology | Purpose |
-|---|---|
-| React 19 | UI development |
-| Vite | Development server and build tooling |
-| JavaScript | Application logic |
-| Tailwind CSS | Styling and responsive layouts |
-| Framer Motion | UI animations and transitions |
-| TSParticles | Interactive particle effects |
-| React Icons | Icon components |
+| Technology | Version | Purpose |
+|---|---|---|
+| React | 19.1.1 | UI development |
+| Vite | 5.4.10 | Development server and build tooling |
+| JavaScript | ES Modules | Application logic |
+| Tailwind CSS | 3.4.18 | Styling and responsive layouts |
+| Framer Motion | 12.23.24 | UI animations and transitions |
+| TSParticles | 3.x | Interactive particle background |
+| React Icons | 5.5.0 | Icon components |
 
 ## Getting Started
 
