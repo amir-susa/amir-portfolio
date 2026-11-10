@@ -1,16 +1,102 @@
-# React + Vite
+# Amir Rahemeto — Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A personal developer portfolio showcasing my technical skills, selected projects, and experience building modern web applications.
 
-Currently, two official plugins are available:
+🌐 **Live Portfolio:** [amir-portfolio-brown.vercel.app](https://amir-portfolio-brown.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Overview
 
-## React Compiler
+This portfolio presents my work as a Full-Stack Developer, highlighting my experience with frontend development, backend technologies, and practical software solutions.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The website features a modern dark-themed interface, responsive layouts, animated interactions, and particle effects.
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- Responsive design for desktop, tablet, and mobile devices
+- Modern dark-themed user interface
+- Animated UI elements and transitions
+- Interactive particle background
+- Sections presenting professional information and technical skills
+- Selected software development projects
+- Links to professional profiles and contact information
+
+## Tech Stack
+
+| Technology | Purpose |
+|---|---|
+| React 19 | UI development |
+| Vite | Development server and build tooling |
+| JavaScript | Application logic |
+| Tailwind CSS | Styling and responsive layouts |
+| Framer Motion | UI animations and transitions |
+| TSParticles | Interactive particle effects |
+| React Icons | Icon components |
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js
+- npm
+- Git
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/amir-susa/amir-portfolio.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd amir-portfolio
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+5. Open the local URL displayed in your terminal.
+
+## Production Build
+
+Create an optimized production build:
+
+```bash
+npm run build
+```
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
+
+## Project Links
+
+- **Live Portfolio:** [Visit Website](https://amir-portfolio-brown.vercel.app/)
+- **GitHub Repository:** [View Source Code](https://github.com/amir-susa/amir-portfolio)
+- **LinkedIn:** [Connect with Me](https://www.linkedin.com/in/amir-rahemeto-280a74246)
+
+## Author
+
+**Amir Rahemeto**
+
+Full-Stack Developer | React | TypeScript | JavaScript | Node.js | Express | MongoDB
+
+- GitHub: [@amir-susa](https://github.com/amir-susa)
+- Portfolio: [amir-portfolio-brown.vercel.app](https://amir-portfolio-brown.vercel.app/)
+
+---
+
+If you find this project interesting, feel free to explore the repository.
